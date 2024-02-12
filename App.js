@@ -11,7 +11,12 @@ export default function App() {
     return (
       <Provider store={store}>
         <NavigationContainer>
-            <Stack.Navigator>
+            <Stack.Navigator screenOptions={{
+              headerStyle: {
+                backgroundColor: '#3b3b3b', 
+              },
+              headerTintColor: '#dee2e6', 
+            }}>
                 <Stack.Screen name='Фильтры' component={MainScreen} />
                 <Stack.Screen name='Фильтр' component={FilterScreen} />
             </Stack.Navigator>

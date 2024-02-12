@@ -8,15 +8,12 @@ export const filterSlice = createSlice({
     },
     reducers: {
         setFilters: (state, { payload }) => {
-            console.log('setFilters');
             state.filters = payload;
         },
         setFilter: (state, { payload }) => {
-            console.log('setFilter');
             state.filter = payload;
         },
         resetFilter: (state) => {
-            console.log('resetFilter');
             state.filter = {};
         },
     },
