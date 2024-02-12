@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image, Button } from 'react-native';
+import { View, Text, StyleSheet, Image, Button, TouchableOpacity } from 'react-native';
 import React from "react";
 import { URI } from "../config";
 
@@ -9,18 +9,19 @@ export default function FilterCard({ navigation, ...props }) {
     };
 
     return (
-        <View style={styles.card}>
-            <Image
-                style={styles.image}
-                source={{ uri: `${URI}/api/filters/${props.id}/image` }}
-                resizeMode='stretch'
-            />
-            <View style={styles.container}>
-                <View style={styles.row}>
-                    <Text style={styles.text}>{props.name}</Text>
+        <View>
+            <TouchableOpacity style={styles.card} onPress={handlePress} activeOpacity={1} >
+                <Image
+                    style={styles.image}
+                    source={{ uri: `${URI}/api/filters/${props.id}/image` }}
+                    resizeMode='stretch'
+                />
+                <View style={styles.container}>
+                    <View style={styles.row}>
+                        <Text style={styles.text}>{props.name}</Text>
+                    </View>
                 </View>
-            </View>
-            <Button title='Подробнее' onPress={handlePress} />
+            </TouchableOpacity>
         </View>
     );
 }

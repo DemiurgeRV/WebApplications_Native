@@ -16,7 +16,7 @@ export const filterSlice = createSlice({
             state.filter = payload;
         },
         resetFilter: (state) => {
-            console.log('resetDevice');
+            console.log('resetFilter');
             state.filter = {};
         },
     },
